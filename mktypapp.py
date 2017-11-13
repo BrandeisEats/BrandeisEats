@@ -18,6 +18,13 @@ def pitch():
 def formdemo():
 	return render_template('formdemo.html')
 
+@app.route('/placeorder')
+def placeorder():
+	return render_template('placeorder.html')
+@app.route('/foodrunner')
+def foodrunner():
+	return render_template('foodrunner.html')
+
 
 if __name__ == '__main__':
     app.run('0.0.0.0',port=3000)
