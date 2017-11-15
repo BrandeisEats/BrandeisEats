@@ -2,12 +2,12 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route('/main')
 def main():
 	return render_template("main.html")
 
 @app.route('/team')
-def bio():
+def team():
 	return render_template('team.html')
 
 @app.route('/pitch')
@@ -18,8 +18,8 @@ def pitch():
 def formdemo():
 	return render_template('formdemo.html')
 
-@app.route('/feedback')
-def feedback():
+@app.route('/giveusfeedback')
+def giveusfeedback():
 		return render_template('giveusfeedback.html')
 
 @app.route('/placeorder')
