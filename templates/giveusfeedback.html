@@ -4,24 +4,41 @@
 <div class="jumbotron">
   <h1>Feedback</h1>
   <p class="text-warning">
-    Tell us about your experience wit Brandeis Eats
+    Tell us about your experience with Brandeis Eats
 
 
   </p>
 
 </div>
 
-<div class="text-center">
-  Give us feedback ...
-</div>
+<h1>Rate BrandeisEats</h1>
+   <div class="stars">
+     <form action="">
+       <input class="star star-5" id="star-5" type="radio" name="star"/>
+       <label class="star star-5" for="star-5"></label>
+       <input class="star star-4" id="star-4" type="radio" name="star"/>
+       <label class="star star-4" for="star-4"></label>
+       <input class="star star-3" id="star-3" type="radio" name="star"/>
+       <label class="star star-3" for="star-3"></label>
+       <input class="star star-2" id="star-2" type="radio" name="star"/>
+       <label class="star star-2" for="star-2"></label>
+       <input class="star star-1" id="star-1" type="radio" name="star"/>
+       <label class="star star-1" for="star-1"></label>
+
+     </form>
+
+   </div>
+
 
 <form>
    <fieldset>
      <p>
-       <label>Add extra Information for runner:</label>
+       <label>Give us specific feedback (Not Required):</label>
        <textarea> </textarea>
      </p>
    </fieldset>
  </form>
+ <input type="submit" value="Submit">
+
 
 {% endblock %}
