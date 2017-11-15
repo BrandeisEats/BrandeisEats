@@ -18,6 +18,10 @@ def pitch():
 def formdemo():
 	return render_template('formdemo.html')
 
+@app.route('/feedback')
+def feedback():
+		return render_template('giveusfeedback.html')
+
 @app.route('/placeorder')
 def placeorder():
 	return render_template('placeorder.html')
