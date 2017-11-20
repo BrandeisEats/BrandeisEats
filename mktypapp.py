@@ -14,6 +14,14 @@ def team():
 def allison():
 	return render_template('Allison.html')
 
+@app.route('/cesar')
+def allison():
+	return render_template('Cesar.html')
+
+@app.route('/venus')
+def allison():
+	return render_template('Venus.html')
+
 @app.route('/pitch')
 def pitch():
 	return render_template('pitch.html')
