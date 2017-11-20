@@ -15,11 +15,11 @@ def allison():
 	return render_template('Allison.html')
 
 @app.route('/cesar')
-def allison():
+def cesar():
 	return render_template('Cesar.html')
 
 @app.route('/venus')
-def allison():
+def venus():
 	return render_template('Venus.html')
 
 @app.route('/pitch')
