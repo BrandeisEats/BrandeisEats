@@ -46,5 +46,27 @@ def foodrunner():
 	return render_template('foodrunner.html')
 
 
+from datetime import datetime
+
+orders=[]
+
+@app.route('/processOrder',methods=['GET','POST'])
+def chat():
+ if request.method == 'POST':
+ 	l = request.form['location']
+ 	w = request.form['what']
+ 	n = datetime.now()
+ 	order = {'location':l,'time':n,'what':w}
+ 	orders.insert(0,order) # add msg to the front of the list
+ 	print(orders)
+ 	return render_template("processOrder.html",orders=orders)
+ else:
+ 	return render_template("processOrder",orders=orders)
+
+@app.route('/processOrder')
+def processOrder():
+	return "processing";
+
+
 if __name__ == '__main__':
     app.run('0.0.0.0',port=3000)

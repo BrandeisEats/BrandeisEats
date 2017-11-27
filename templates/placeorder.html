@@ -7,6 +7,7 @@
 
   </p>
 </div>
+<form method="POST" action="processOrder">
 <div>
   Place order from:
   <br>
@@ -27,24 +28,28 @@
   <br>
   <br>
   What to pick up? (Be specific as possible)
-  <input type="text" width="50" id="order">
+  <input type="text" width="50" id="what">
   <br>
   What size?
-  <input type="text" width="50" id="order">
+  <input type="text" width="50" id="size">
+  <br>
+  Amount?
+  <input type="text" width="50" id="amount">
   <br>
   Where to deliver?
-  <input type="text" width="50" id="location">
+  <input type="text" width="50" id="destination">
   <br>
-  <form>
+
      <fieldset>
        <p>
          <label>Add extra Information for runner:</label>
-         <textarea> </textarea>
+         <textarea name="extra"> </textarea>
        </p>
      </fieldset>
-   </form>
+
   <input type="submit" value="Checkout">
 
+</form>
 
 
 
