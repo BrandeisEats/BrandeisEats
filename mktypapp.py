@@ -62,11 +62,11 @@ def chat():
  	print(orders)
  	return render_template("processOrder.html",orders=orders)
  else:
- 	return render_template("processOrder",orders=orders)
+ 	return render_template("processOrder.html",orders=orders)
 
 @app.route('/processOrder')
 def processOrder():
-	return "processing";
+	return render_template("processing");
 
 
 if __name__ == '__main__':
