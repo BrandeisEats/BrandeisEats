@@ -54,9 +54,10 @@ orders=[]
 def chat():
  if request.method == 'POST':
  	l = request.form['location']
+ 	a = request.form['amount']
  	w = request.form['what']
  	n = datetime.now()
- 	order = {'location':l,'time':n,'what':w}
+ 	order = {'location':l,'time':n,'what':w, 'amount':a}
  	orders.insert(0,order) # add msg to the front of the list
  	print(orders)
  	return render_template("processOrder.html",orders=orders)
