@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="jumbotron">
+  <h1>Orders</h1>
+  <p class="text-warning">
+
+  </p>
+</div>
+<div class="text-center">
+  <ul>
+  {% for order in orders %}
+    <li>
+       {{order.location}}/{{order.time}}: <strong>{{order.what}}</strong>
+    </li>
+    {% endfor %}
+    </ul<
+</div>
+
+{% endblock %}
