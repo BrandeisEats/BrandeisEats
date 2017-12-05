@@ -138,7 +138,7 @@ def foodrunner():
 from datetime import datetime
 
 orders=[]
-orderCounter=[0]
+orderCounter=0
 
 @app.route('/processOrder',methods=['GET','POST'])
 def processOrder():
@@ -153,8 +153,16 @@ def processOrder():
 		e = request.form['extra']
 		n = datetime.now()
 		print(orderCounter)
-		order = {'id':orderCounter[0], 'destination':d,'location':l, 'time':n,'what':w,'who':who,'extra':e}
-		orderCounter[0] = orderCounter[0] + 1
+		order = {
+            'id':orderCounter,
+            'destination':d,
+            'location':l,
+            'time':n,
+            'what':w,
+            'who':who,
+            'extra':e
+            }
+		orderCounter = orderCounter + 1
 		orders.insert(0,order) # add msg to the front of the list
 		print(orders)
 		return render_template("processOrder.html",orders=orders)
