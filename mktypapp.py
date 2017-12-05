@@ -142,6 +142,8 @@ orderCounter=[0]
 
 @app.route('/processOrder',methods=['GET','POST'])
 def processOrder():
+	global orders
+	global orderCounter
 	if request.method == 'POST':
 		userinfo = session['userinfo']
 		who = userinfo['email']
@@ -163,6 +165,8 @@ deliveries=[]
 
 @app.route('/takeOrder',methods=['GET','POST'])
 def takeOrder():
+	global deliveries
+	global orders
 	if request.method == 'POST':
 		userinfo = session['userinfo']
 		who = userinfo['email']
@@ -171,11 +175,39 @@ def takeOrder():
 		delivery={"id":num,"deliverer":who,"time":n}
 		deliveries.insert(0,delivery)
 		print(deliveries)
-		return render_template("takeOrder.html",deliveries=deliveries)
+		print('orders=')
+		print(orders)
+		newOrders = [x for x in orders if not(int(x['id'])==int(num)) ]
+		print("newOrders=")
+		print(newOrders)
+		orders = newOrders
+		return render_template("takeOrder.html",deliveries=deliveries,orders=orders)
 	else:
 		print("deliveries = ")
 		print(deliveries)
-		return render_template("takeOrder.html",deliveries=deliveries)
+		return render_template("takeOrder.html",deliveries=deliveries,orders=orders)
+
+
+@app.route('/removeOrder',methods=['GET','POST'])
+def removeOrder():
+	global deliveries
+	global orders
+	if request.method == 'POST':
+		userinfo = session['userinfo']
+		who = userinfo['email']
+		num = request.form['orderNumber']
+		newDeliveries = [x for x in deliveries if not(int(x['id'])==int(num)) ]
+		print('deliveries=')
+		print(deliveries)
+		print(num)
+		print(deliveries[0]['id'])
+		print(deliveries[0]['id']==num)
+		print(deliveries[0]['id']==int(num))
+		print(int(deliveries[0]['id'])==int(num))
+		print('newDeliveries=')
+		print(newDeliveries)
+		deliveries = newDeliveries
+	return render_template("takeOrder.html",deliveries=deliveries)
 
 
 

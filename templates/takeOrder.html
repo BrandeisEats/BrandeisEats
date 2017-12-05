@@ -7,7 +7,7 @@
 </div>
 
 {% for delivery in deliveries %}
-  <form method="GET" action="/removeOrder">
+  <form method="POST" action="/removeOrder">
      <h2>ORDER {{delivery.id}} :: {{delivery.time}} ---
      {{delivery.deliverer}}</h2>
      <input type="hidden" name="orderNumber" value="{{delivery.id}}">
@@ -15,5 +15,7 @@
    </form>
   <hr>
   {% endfor %}
+
+
 
 {% endblock %}
