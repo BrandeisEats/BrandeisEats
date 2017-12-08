@@ -12,8 +12,13 @@ from flask_oauthlib.client import OAuth
 
 
 app = Flask(__name__)
+# DEVELOPMENT http://127.0.0.1:5000
 app.config['GOOGLE_ID'] = '246096591118-ti33uv184e4m1bib9grgn8alm45btadb.apps.googleusercontent.com'
 app.config['GOOGLE_SECRET'] = 'iqgLqu6pXgLuHsZFq6nvxDX3'
+
+# PRODUCTION http://gracehopper.cs-i.brandeis.edu:5300
+#app.config['GOOGLE_ID'] = '783502545148-h5dnl6cos96sni9o39itquf58ih24tvk.apps.googleusercontent.com'
+#app.config['GOOGLE_SECRET'] = 'JGcCAUbPw2Nt6i6Maw6-lh4J'
 
 
 app.debug = True
@@ -220,4 +225,5 @@ def removeOrder():
 
 
 if __name__ == '__main__':
-    app.run('0.0.0.0',port=5000)
+	#app.run('0.0.0.0',port=5300) # PRODUCTION gracehopper.cs-i.brandeis.edu:5300
+	app.run('0.0.0.0',port=5000) # DEVELOPMENT 127.0.0.1:5000
