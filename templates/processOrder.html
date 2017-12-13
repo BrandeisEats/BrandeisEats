@@ -15,10 +15,24 @@
     <form method="POST" action="/takeOrder">
        <h2>ORDER {{order.id}} :: {{order.time}}</h2>
        <b>{{order.who}}</b> is placing an order at <b>{{order.time}}</b> for
+<<<<<<< HEAD
        <div class="bg-info">{{order.what}}</div>
        from <b>{{order.location}}</b>
        <div class="bg-info">{{order.extra}}</div>
        to be delivered to <b>{{order.destination}}</b>
+=======
+
+       <div class="bg-info">{{order.what}}</div>
+       from <b>{{order.location}}</b>
+
+       <div class="bg-info">{{order.extra}}</div>
+       to be delivered to <b>{{order.destination}}</b>
+
+       <div class="bg-info">{{order.what}}</div>
+       Clients phone Number <b>{{order.phoneNumber}}</b>
+
+
+>>>>>>> 48f488178df67c75673e4f15e6cf7b640da2c139
        <br>
        <input type="hidden" name="orderNumber" value="{{order.id}}">
        <input class="btn btn-lg btn-danger" type="submit" value="I'll take this!!">
