@@ -7,14 +7,25 @@
 
   </p>
 </div>
-<div class="text-center">
-  <ul>
+
+
+<div class="text-left">
+
   {% for order in orders %}
-    <li>
-       {{order.location}}/{{order.time}}: <strong>{{order.what}}</strong>
-    </li>
+    <form method="POST" action="/takeOrder">
+       <h2>ORDER {{order.id}} :: {{order.time}}</h2>
+       <b>{{order.who}}</b> is placing an order at <b>{{order.time}}</b> for
+       <div class="bg-info">{{order.what}}</div>
+       from <b>{{order.location}}</b>
+       <div class="bg-info">{{order.extra}}</div>
+       to be delivered to <b>{{order.destination}}</b>
+       <br>
+       <input type="hidden" name="orderNumber" value="{{order.id}}">
+       <input class="btn btn-lg btn-danger" type="submit" value="I'll take this!!">
+     </form>
+    <hr>
     {% endfor %}
-    </ul<
+
 </div>
 
 {% endblock %}
