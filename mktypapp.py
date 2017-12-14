@@ -229,12 +229,5 @@ def removeOrder():
 if __name__ == '__main__':
     app.run('0.0.0.0',port=5000)
 	#app.run('0.0.0.0',port=5300) # PRODUCTION gracehopper.cs-i.brandeis.edu:5300
-<<<<<<< HEAD
     app.run('0.0.0.0',port=5000) # DEVELOPMENT 127.0.0.1:5000
-=======
-<<<<<<< HEAD
->>>>>>> 48f488178df67c75673e4f15e6cf7b640da2c139
-=======
 	app.run('0.0.0.0',port=5000) # DEVELOPMENT 127.0.0.1:5000
->>>>>>> 2b1db415e2d6ea68aff76da90474b62093b867ae
->>>>>>> f8ba5d9cd7262db16c99760a58b0474cf2d5823c
