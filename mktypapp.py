@@ -12,9 +12,6 @@ from functools import wraps
 from flask import Flask, redirect, url_for, session, request, jsonify, render_template, request
 from flask_oauthlib.client import OAuth
 
-app.debug = True
-app.secret_key = 'development'
-oauth = OAuth(app)
 
 app = Flask(__name__)
 #app.config['GOOGLE_SECRET'] = 'iqgLqu6pXgLuHsZFq6nvxDX3'
