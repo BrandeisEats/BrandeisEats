@@ -6,6 +6,8 @@
     The authentication comes from an app by Bruno Rocha
     GitHub: https://github.com/rochacbruno
 """
+
+
 from functools import wraps
 from flask import Flask, redirect, url_for, session, request, jsonify, render_template, request
 from flask_oauthlib.client import OAuth
@@ -23,8 +25,6 @@ app.config['GOOGLE_SECRET'] = 'iqgLqu6pXgLuHsZFq6nvxDX3'
 
 # PRODUCTION http://gracehopper.cs-i.brandeis.edu:5300
 #app.config['GOOGLE_ID'] = '783502545148-h5dnl6cos96sni9o39itquf58ih24tvk.apps.googleusercontent.com'
-#app.config['GOOGLE_SECRET'] = 'JGcCAUbPw2Nt6i6Maw6-lh4J'
-
 
 app.debug = True
 app.secret_key = 'development'
