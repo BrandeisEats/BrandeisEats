@@ -29,7 +29,6 @@ app.config['GOOGLE_SECRET'] = 'iqgLqu6pXgLuHsZFq6nvxDX3'
 app.debug = True
 app.secret_key = 'development'
 oauth = OAuth(app)
->>>>>>> 2b1db415e2d6ea68aff76da90474b62093b867ae
 
 google = oauth.remote_app(
     'google',
