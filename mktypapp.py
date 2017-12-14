@@ -22,7 +22,6 @@ app.config['GOOGLE_SECRET'] = 'iqgLqu6pXgLuHsZFq6nvxDX3'
 #app.config['GOOGLE_ID'] = '783502545148-h5dnl6cos96sni9o39itquf58ih24tvk.apps.googleusercontent.com'
 #app.config['GOOGLE_SECRET'] = 'JGcCAUbPw2Nt6i6Maw6-lh4J'
 
->>>>>>> 48f488178df67c75673e4f15e6cf7b640da2c139
 
 app.debug = True
 app.secret_key = 'development'
