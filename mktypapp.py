@@ -43,7 +43,6 @@ google = oauth.remote_app(
     access_token_url='https://accounts.google.com/o/oauth2/token',
     authorize_url='https://accounts.google.com/o/oauth2/auth',
 )
-
 def require_login(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
