@@ -10,6 +10,9 @@ from functools import wraps
 from flask import Flask, redirect, url_for, session, request, jsonify, render_template, request
 from flask_oauthlib.client import OAuth
 
+app.debug = True
+app.secret_key = 'development'
+oauth = OAuth(app)
 
 app = Flask(__name__)
 app.config['GOOGLE_ID'] = '246096591118-ti33uv184e4m1bib9grgn8alm45btadb.apps.googleusercontent.com'
@@ -22,10 +25,14 @@ app.config['GOOGLE_SECRET'] = 'iqgLqu6pXgLuHsZFq6nvxDX3'
 #app.config['GOOGLE_ID'] = '783502545148-h5dnl6cos96sni9o39itquf58ih24tvk.apps.googleusercontent.com'
 #app.config['GOOGLE_SECRET'] = 'JGcCAUbPw2Nt6i6Maw6-lh4J'
 
+<<<<<<< HEAD
+> 48f488178df67c75673e4f15e6cf7b640da2c139
+=======
 
 app.debug = True
 app.secret_key = 'development'
 oauth = OAuth(app)
+>>>>>>> 2b1db415e2d6ea68aff76da90474b62093b867ae
 
 google = oauth.remote_app(
     'google',
@@ -202,7 +209,6 @@ def takeOrder():
 		print(deliveries)
 		return render_template("takeOrder.html",deliveries=deliveries,orders=orders)
 
-
 @app.route('/removeOrder',methods=['GET','POST'])
 def removeOrder():
 	global deliveries
@@ -224,9 +230,15 @@ def removeOrder():
 		deliveries = newDeliveries
 	return render_template("takeOrder.html",deliveries=deliveries)
 
-
-
 if __name__ == '__main__':
     app.run('0.0.0.0',port=5000)
 	#app.run('0.0.0.0',port=5300) # PRODUCTION gracehopper.cs-i.brandeis.edu:5300
+<<<<<<< HEAD
     app.run('0.0.0.0',port=5000) # DEVELOPMENT 127.0.0.1:5000
+=======
+<<<<<<< HEAD
+>>>>>>> 48f488178df67c75673e4f15e6cf7b640da2c139
+=======
+	app.run('0.0.0.0',port=5000) # DEVELOPMENT 127.0.0.1:5000
+>>>>>>> 2b1db415e2d6ea68aff76da90474b62093b867ae
+>>>>>>> f8ba5d9cd7262db16c99760a58b0474cf2d5823c
